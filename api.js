@@ -34,6 +34,11 @@ function renderEmptyState() {
 }
 
 function renderNote(note, prepend = false) {
+  const emptyState = notesList.querySelector(".empty-state");
+  if (emptyState) {
+    emptyState.remove();
+  }
+
   const item = document.createElement("li");
   item.className = "note";
   item.dataset.noteId = note.id;
